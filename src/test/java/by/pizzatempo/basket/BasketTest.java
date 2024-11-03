@@ -1,5 +1,5 @@
 package by.pizzatempo.basket;
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class BasketTest extends BaseTest {
@@ -10,6 +10,6 @@ public class BasketTest extends BaseTest {
         basketPage.clickOrderButtonPizzaMargherita();
         basketPage.clickConfirmOrderButton();
         basketPage.clickBasketButton();
-        AssertJUnit.assertEquals(basketPage.getProductNameInBasket(), BasketMessage.TEXT_PIZZA_IN_BASKET_LOCATOR);
+        Assert.assertEquals(basketPage.getProductNameInBasket(), BasketMessage.TEXT_PIZZA_IN_BASKET_LOCATOR);
     }
 }
