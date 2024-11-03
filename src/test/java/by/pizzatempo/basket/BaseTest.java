@@ -14,7 +14,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         driver.get("https://www.pizzatempo.by/");
         basketPage = new BasketPage(driver);
     }

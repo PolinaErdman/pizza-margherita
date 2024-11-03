@@ -3,6 +3,10 @@ package by.pizzatempo.basket;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class BasketPage {
     private WebDriver driver;
@@ -37,6 +41,8 @@ public class BasketPage {
 
     public String getProductNameInBasket() {
         By productNameInBasketBy = By.xpath(BasketLocators.BASKET_PRODUCT_NAME_TEXT_LOCATOR);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productNameInBasketBy));
         WebElement productNameInBasketWebElement = driver.findElement(productNameInBasketBy);
         return productNameInBasketWebElement.getText();
     }
